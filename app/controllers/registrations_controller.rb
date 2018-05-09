@@ -6,10 +6,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations.json
   def express
     debugger
-  response = EXPRESS_GATEWAY.setup_purchase(1000,
       :ip                => request.remote_ip,
-      :return_url        => new_registration_url,
-      :cancel_return_url => products_url
     )
     redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
   end
@@ -17,7 +14,6 @@ class RegistrationsController < ApplicationController
 
   def index
     #binding.pry
-    @registrations = Registration.all
   end
 
   # GET /registrations/1
