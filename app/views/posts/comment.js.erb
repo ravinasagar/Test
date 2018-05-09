@@ -1,0 +1,9 @@
+$('#post_<%= @comment.post_id %>_comments').append("<%= j(render partial: 'single_comment', locals: {comment: @comment} )%>");
+
+$('#clearcomment').val('');
+// debugger
+$('#submittext').keypress(function(e){
+      if(e.which == 13){
+           $(this).closest('comment_form').submit();
+       }
+    });

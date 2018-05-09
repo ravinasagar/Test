@@ -1,0 +1,5 @@
+<br><br>
+<%= form_for@uploader, html: { multipart: true } do |form| %>
+  <%= form.file_field :avatar %><br><br>
+  <%= form.submit %>
+<% end %>

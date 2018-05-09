@@ -1,0 +1,8 @@
+<%binding.pry%>
+<% form_for @product do |f| %>
+  <%#= f.error_messages %>
+ <%= f.hidden_field :express_token %>
+
+
+  <p><%= f.submit "Complete Order" %></p>
+<% end %>

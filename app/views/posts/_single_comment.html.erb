@@ -1,0 +1,7 @@
+<%#binding.pry%>
+<div class="col-md-6">
+<%= comment.comment %><br>
+</div>
+<div id="comment_<%= comment.id %>_likes" class="col-md-6">
+  <%= render partial: 'comment_like', locals: {comment: comment} %>
+</div>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Registrations</h1>
+
+<table border="1">
+ 
+    <tr>
+      <th>student name</th>
+      <th>course</th>
+      <th>New</th>
+      <th>Cart</th>
+      <th>Ip address</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Card type</th>
+      <th>Card expires on</th>registration
+     
+    </tr>
+    <% @registrations.each do |registration| %>
+      <tr>
+        <td><%=registration.student_name%></td>
+        <td><%=registration.course%></td>
+        <td><%= registration.new %></td>
+        <td><%= registration.cart_id %></td>
+        <td><%= registration.ip_address %></td>
+        <td><%= registration.first_name %></td>
+        <td><%= registration.last_name %></td>
+        <td><%= registration.card_type %></td>
+        <td><%= registration.card_expires_on %></td>
+         <td><%= link_to 'Show', registration %></td>
+        <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
+        <td><%= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+    <div><%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"),registrations_express_path %></div>
+  
+</table>
+
+<br>
+
+<%= link_to 'New Registration', new_registration_path %>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PostLike</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if member_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_member_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_member_session_path)  %>  <br><br>
+  <%#= link_to "Sign in with Google", member_google_oauth2_omniauth_authorize_path %><br><br>
+  <%#= link_to "Sign in with Facebook", member_facebook_omniauth_authorize_path %>
+  </li>
+<% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+<%=link_to 'create_booking',new_booking_path%><br>
+
+<% @bookings.each do|booking|%>
+<%=booking.name%>
+<%=booking.city%>
+<%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_products_path(:id => booking.id) %><br><br>
+<%end%>

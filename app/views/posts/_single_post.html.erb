@@ -1,0 +1,14 @@
+<div class="post" id="post-<%= post.id %>">
+  <div class="col-sm-3">
+    <%= post.post %><br>
+    <div id="post_<%= post.id %>_likes" class="col-md-6">
+      <%= render partial: 'like', locals: {post: post} %>
+    </div>
+    <div id="post_<%= post.id %>_comments">
+      <% post.comments.each do |comment|%>
+        <%= render partial: 'single_comment', locals: { comment: comment } %>
+      <%end%>
+    </div>
+    <%= render partial: 'comment_form', locals: {post: post}%>
+  </div>
+</div>

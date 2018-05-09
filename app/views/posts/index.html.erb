@@ -1,0 +1,9 @@
+<div class="post-form">
+  <%= render partial: 'form' %>
+</div>
+<div class="all-posts">
+  <% @posts.each do|post|%>
+    <%= render partial: 'single_post', locals: {post: post} %>
+  <%end%>
+</div>
+
