@@ -10,10 +10,10 @@ class OrdersController < ApplicationController
   redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
   end
 
-  def new
-    #binding.pry
-  @order = Order.new(:express_token => params[:token])
-  end
+  # def new
+  #   #binding.pry
+  # @order = Order.new(:express_token => params[:token])
+  # end
 
   def create
   end

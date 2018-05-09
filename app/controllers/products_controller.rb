@@ -2,15 +2,15 @@ class ProductsController < ApplicationController
   
  
 
-  # def express
-  #   booking =Booking.find(params[:id])
-  #   response = EXPRESS_GATEWAY.setup_purchase(1000,
-  #     ip: request.remote_ip,
-  #     return_url: url_for(:action => 'complete', :id => booking.id),
-  #     cancel_return_url: "http://localhost:3000/bookings",
-  #   )
-  #   redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
-  # end
+  def express
+    booking =Booking.find(params[:id])
+    response = EXPRESS_GATEWAY.setup_purchase(1000,
+      ip: request.remote_ip,
+      return_url: url_for(:action => 'complete', :id => booking.id),
+      cancel_return_url: "http://localhost:3000/bookings",
+    )
+    redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
+  end
 
 
 
