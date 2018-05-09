@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'facebook/index'
+
   get 'welcomes/index'
 
   get 'registrations/index'
