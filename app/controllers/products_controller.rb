@@ -9,9 +9,6 @@ class ProductsController < ApplicationController
       ip: request.remote_ip,
       return_url: url_for(:action => 'complete', :id => booking.id),
       cancel_return_url: "http://localhost:3000/bookings",
-      currency: "USD",
-      allow_guest_checkout: true,
-      items: [{name: booking.name, quantity: "1", amount: 1000}]
     )
     binding.pry
     redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
