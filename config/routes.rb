@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'welcomes/index'
+
+  get 'registrations/index'
+
   root 'uploaders#index'
   resources :uploaders
 
